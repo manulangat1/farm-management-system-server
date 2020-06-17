@@ -1,6 +1,8 @@
 import pytest
 import datetime
 from django.urls import reverse
+from pytest_postgresql import factories
+postgresql_external = factories.postgresql('postgresql_nooproc')
 @pytest.fixture
 def api_client():
     from rest_framework.test import APIClient

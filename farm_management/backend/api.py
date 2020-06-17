@@ -27,3 +27,9 @@ class ParturationAPI(generics.CreateAPIView):
         expected_date = date_served + d
         print(expected_date)
         return serializer.save(date_served=date_served,expected_date=expected_date)
+class ParturationListAPI(generics.ListAPIView):
+    queryset = Parturation.objects.all()
+    serializer_class = ParturationSerializer
+class ParturationDetailAPI(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Parturation.objects.all()
+    serializer_class = ParturationSerializer

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Cow,Parturation
+from .models import Cow,Parturation,Feed,Treatment
 
 class CowSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,6 +40,16 @@ class ParturationSerializer(serializers.ModelSerializer):
         fields = (
             'cow',
             'date_served',
-            'days',
-            'expected_date'
+            'expected_date',
+            'breed',
+            'vet'
         )
+
+# class FeedSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Feed
+#         fields = (
+#             'cow',
+#             'amount',
+#             'date'
+#         )

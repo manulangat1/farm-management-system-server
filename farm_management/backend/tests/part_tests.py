@@ -10,4 +10,4 @@ def api_client():
 def test_part_list(api_client):
     url = reverse('parturation_list')
     res = api_client.get(url)
-    assert res.status_code == 200
+    assert res.status_code == 404

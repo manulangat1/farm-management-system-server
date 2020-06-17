@@ -2,5 +2,5 @@ language: python
 install:
     - pip install -r requirements.txt
 script:
-  -  cd farm_management && pytest
+  -  cd farm_management && pytest --postgresql-port=5432
 #   - pytest_postgresql tests

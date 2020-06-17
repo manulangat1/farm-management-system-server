@@ -167,3 +167,4 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/django,code,venv
 
 __pycache__
+.pytest_cache

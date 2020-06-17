@@ -65,7 +65,7 @@ WSGI_APPLICATION = 'farm_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'farm_management',
         'USER':'manulangat',
         'PASSWORD':'3050manu'

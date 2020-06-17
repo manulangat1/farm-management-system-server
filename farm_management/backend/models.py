@@ -13,10 +13,10 @@ class Cow(models.Model):
 
 class Parturation(models.Model):
     cow = models.ForeignKey(Cow,on_delete=models.DO_NOTHING,related_name="parturation")
-    date_served = models.DateField()
-    days = models.IntegerField()
-    expected_date = models.DateField()
-
+    date_served = models.DateTimeField()
+    expected_date = models.DateTimeField()
+    breed = models.CharField(max_length=200,null=True,blank=True)
+    vet = models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
         return self.cow.name
 

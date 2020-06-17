@@ -9,6 +9,5 @@ def api_client():
 @pytest.mark.django_db
 def test_part_list(api_client):
     url = reverse('parturation_list')
-    
     res = api_client.get(url)
-    assert res.status_code == 404
+    assert res.status_code == 200

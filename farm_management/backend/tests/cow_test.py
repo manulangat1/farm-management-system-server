@@ -2,21 +2,15 @@ import pytest
 # from backed.models import Cow
 from django.urls import reverse
 import datetime
+from django.conf import settings
 
 @pytest.fixture
 def api_client():
     from rest_framework.test import APIClient
     return APIClient()
-@pytest.fixture(scope='session')
-def django_db_setup():
-    settings.DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'farm_management',
-        'USER':'manulangat',
-        'PASSWORD':'3050manu'
-    }
+
 @pytest.mark.django_db
-def test_cow_create(api_client,django_db_setup):
+def test_cow_create(api_client):
     now = datetime.datetime.now()
     data = {
         'dob':now,
@@ -29,7 +23,7 @@ def test_cow_create(api_client,django_db_setup):
     assert response.status_code == 201
 
 @pytest.mark.django_db
-def test_cow_list(api_client,django_db_setup):
+def test_cow_list(api_client):
     url = reverse('cow_list')
     response = api_client.get(url)
     assert response.status_code == 200

@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'backend.apps.BackendConfig',
     'rest_framework',
     'rest_framework_swagger',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {

@@ -3,6 +3,7 @@ import pytest
 from django.urls import reverse
 import datetime
 from django.conf import settings
+
 @pytest.fixture
 def api_client():
     from rest_framework.test import APIClient

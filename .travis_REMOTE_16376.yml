@@ -1,18 +1,10 @@
 language: python
 before_script:
-<<<<<<< HEAD
-  - psql -c 'create database travis_ci_test;' -U postgres
-install:
-    - pip install -r requirements.txt
-script:
-  -  cd farm_management && pytest 
-=======
   - psql -c "CREATE DATABASE testing_db;" -U postgres
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
 install:
     - pip install -r requirements.txt
 script:
   -  cd farm_management && pytest
->>>>>>> ft-testing-backend
 services:
   - postgresql
